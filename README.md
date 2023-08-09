@@ -28,10 +28,18 @@ Same as above but this time getting course information by making a call to an AP
 
 ### Bulk delete users
 
-Take a csv containing lots of old user ids of people who haven't taken a course in several years. Check whether their account is unused,[^last_login] and if not, delete the account. With a huge number of accounts you quickly encounter rate limiting and have to slow down the script, which makes this one a pain to run.
+Take a csv containing lots of old user ids of people who haven't taken a course in several years. Check whether their account is unused,[^last_login] and if not, delete the account. With a huge number of accounts you quickly encounter rate limiting and have to slow down the script, which makes this one a pain to run. That said, manually deleting user accounts doesn't scale well either.
 
 [^last_login]: An account is unused if the last login date equals the Unix epoch (1970-01-01 00:00:00), and you can change that to get accounts not logged into since a set date.
 
 ### Get course ids
 
+List all google ids of all provisioned courses. Makes use of pagination to get courses in batches.
 
+### Get ids and aliases
+
+List all active courses with their google ids and by alias. You can think of this as a right join on course ids and aliases. In the final list, aliases are unique, but google ids are not. This is useful for disaggregating the situations where multiple courses (with different course codes/aliases) share the same Google Classroom.
+
+### Mass announcement
+
+Make an announcement to all active classes, which would be useful for situations where you need to broadcast that the college has been closed due to a weather accident or some other emergency. Beware if you add an announcement to a de-provisioned course, it'll be made active.
