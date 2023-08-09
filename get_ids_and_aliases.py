@@ -42,16 +42,8 @@ def classroom_list_course_ids():
 
 def get_aliases(big_course_list):
 
-    ### Uncomment either of the three lines if you want to get
-    ### ids from google or from existing file
-
     course_id_list_length: int = len(big_course_list)
     print(f'{course_id_list_length} course ids received.')
-
-    # with open('course_ids_list.csv', 'r') as course_list_file:
-    #     course_list_string = course_list_file.read()
-    #     big_course_list: list = course_list_string.split(',')
-    
     course_id_list_length = len(big_course_list)
 
     increase_step: int = ((course_id_list_length // 2)
