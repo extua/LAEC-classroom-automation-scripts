@@ -30,7 +30,7 @@ Same as above but this time getting course information by making a call to an AP
 
 Take a csv containing lots of old user ids of people who haven't taken a course in several years. Check whether their account is unused,[^last_login] and if not, delete the account. With a huge number of accounts you quickly encounter rate limiting and have to slow down the script, which makes this one a pain to run. That said, manually deleting user accounts doesn't scale well either.
 
-[^last_login]: An account is unused if the last login date equals the Unix epoch (1970-01-01 00:00:00), and you can change that to get accounts not logged into since a set date.
+[^last_login]: An account is unused if the last login date equals the Unix epoch (1970-01-01 00\:00\:00), and you can change that to get accounts not logged into since a set date.
 
 ### Get course ids
 
